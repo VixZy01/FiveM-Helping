@@ -1,0 +1,345 @@
+endpoint_add_tcp "0.0.0.0:30120" 
+endpoint_add_udp "0.0.0.0:30120" 
+
+# license key for server (https://keymaster.fivem.net)
+sv_licenseKey 
+
+sv_maxclients 32
+#30120
+
+
+#-----BANNIERE----#
+sets banner_detail "https://i.imgur.com/fgoSAOU.png"
+sets banner_connecting "https://i.imgur.com/fgoSAOU.png"
+sets Discord "🔊 http://discord.gg/ 🔊"
+sets Développeur "💻 VixZy 💻"
+sets tags "Free-Access, Double Jobs, RP Serieux, Vehicule Import, Économie Semi-Réaliste, Telephone, Staff Actif"
+
+sets Etat "Ouvert"
+
+set mysql_connection_string "server=localhost;uid=USERNAME;password=PASSWORD;database=essentialmode;charset=utf8mb4_danish_ci;sslmode=none"
+set mysql_slow_query_warning 50
+
+add_ace resource.essentialmode command.add_ace allow
+add_ace resource.essentialmode command.add_principal allow
+add_ace resource.essentialmode command.sets allow
+
+# Disable Couchdb from essentialmode
+set es_enableCustomData 1 
+
+#-----ONESYNC----#
+set onesync_enabled 1
+#set onesync_distanceCullVehicles true #Cause des crash pour le moment + Cause des joueurs invisible
+set onesync_forceMigration true
+set onesync_workaround763185 true
+
+#-----Steam API Fix----#
+set steam_webApiKey ""
+
+#-----BASIC----#
+ensure mapmanager
+ensure chat
+ensure spawnmanager
+ensure sessionmanager
+restart sessionmanager
+ensure fivem
+ensure rconlog
+ensure baseevents
+
+#########################################
+###############ESSANTIAL#################
+#########################################
+ensure mysql-async
+ensure essentialmode
+ensure async
+ensure esplugin_mysql
+ensure es_admin2
+ensure es_extended
+ensure cron
+ensure instance
+
+#----Liste des Joueurs----#
+ensure esx_scoreboard
+
+ensure replyandreport-esx #Système du report au admin avec réponse
+
+#########################################
+#################ESXBASE#################
+#########################################
+
+ensure esx_menu_default
+ensure esx_menu_list
+ensure esx_menu_dialog
+ensure NativeUILua_Reloaded #Dépendance du menu F5
+ensure NativeUI
+ensure Arkadia_personalmenu #Menu F5
+
+#----IPL FIVEM----#
+ensure bob74_ipl
+
+#----DEPENDANCE----#
+ensure esx_addonaccount #Argent Société
+ensure esx_addoninventory #Coffre inventaire société
+ensure esx_datastore #Coffre
+ensure esx_society #Argent société + controle société
+ensure esx_billing #Facture
+
+#----Non-Esx----#
+
+ensure connectqueue #FILE D'ATTENTE
+#ensure esx_douane #Whiteliste
+ensure panzar-load #Screen de chargement
+ensure reboot #Annonce le Reboot
+ensure vSync #Synchronisation du temps pour tout le monde
+ensure pNotify #Système de notification
+
+ensure pvp #Active le PvP entre joueurs
+ensure scriptpnj #Gère la densité des PNJ
+ensure CalmAI #Les IA sont calme
+ensure gd_airport_ai_begone #Supprime les avions de la map
+ensure ProtectPnj #DisableDispatch / removeAIcops / novehicleweapon / nodroppnj / deletearmevehicule & more
+
+ensure vdk_call #Addon Police, Ambulance et Mécano du GCPHONE
+ensure gcphone #Téléphone
+ensure esx_addons_gcphone #Addon du téléphone
+ensure esx_cartesim #Sim Card GCPHONE
+ensure screenshot-basic #App Photo GCPHONE (Windows ONLY)
+
+ensure knockout #Tombé KO Technique
+
+ensure pausemenu-title #Titre du menu ECHAP
+ensure eden_jail #Tenue Prisonnier devant les cellules
+
+ensure suptime #Uptime serveur
+ensure progressBars #Barre chargement lors de réanimation/réparation etc
+ensure 3dme #Me en 3D
+
+ensure Radargun #Pistolet Radar (Vintage Pistol)
+
+ensure vir-deathscreen #Animation Mort Pulsation
+
+#----Esx----#
+#ensure esx_headbag #Sac sur la tête pour caché la vue
+ensure esx-qalle-jail #Prison
+ensure esx_teleports
+ensure esx_ktackle #Plaqué quelqu'un au sol (Policier Only)
+ensure esx_rpchat
+ensure esx_license #Licence pour les joueurs
+ensure esx_identity
+#ensure esx_teleportpads
+
+#-----Tenues-----#
+ensure skinchanger #Changer sont skin
+ensure esx_skin #Skin au spawn
+ensure esx_accessories #Accessoires vêtements
+ensure VetementHomme
+ensure Arkadia_tenue_1
+ensure Arkadia_tenue_2
+
+#-----Besoins-----#
+ensure esx_basicneeds #Status Faim et Soif
+ensure esx_optionalneeds #Status Bourré
+ensure esx_status
+ensure ft_libs
+ensure esx_celldoors #Fermé et Ouvrir les portes commico
+ensure afkkick #Kick les AFK
+ensure radio #Radio Voiture
+ensure esx_entitysync #Synchonise les entités
+
+#-----Magasins-----#
+ensure esx_vehicleshop #Job Vente de véhicule
+ensure esx_property #Maison + Appartement
+ensure esx_weapons #Skin Armes etc
+ensure esx_weaponscomponents #Accessoires Armes
+ensure qalle_policearmory #Armes Policiers
+ensure esx_utils #Chargeur Armes + Jumelle + Caméra Helico
+ensure esx_dmvschool #AutoEcole
+ensure NativeUI_shops #Superette
+ensure esx_bankrobberies #Braquage de Banque
+ensure esx_lscustom #Vente Custom Véhicule
+ensure esx_eden_clotheshop #Magasin de vêtements
+ensure NativeUI_barber #Boutique de Cheveux
+ensure esx_prw_tatooshop #Boutique de Tatouage
+ensure esx_quincaillerie #Vente Skin et accessoires Armes
+#ensure npcs #PNJ Vente Drogues
+
+#-----Jobs-----#
+ensure esx_joblisting #Prise du Job Pôle Emploi + Blips
+ensure esx_jk_jobs #Prise du Job Pôle Emploi
+ensure esx_avocatjob #Job Avocat
+ensure esx_policejob #Job Policier
+ensure esx_unicornjob #Job Unicorn
+ensure esx_bahamajob #Job Bahama
+ensure esx_realestateagentjob #Job Agent Immobilier
+#ensure esx_securoservjob #Job SecuroServ
+ensure esx_duty #Prise/Quitté le service EMS et Police
+#ensure esx_journaliste
+#ensure WeazelNewsCam
+#ensure esx_statejob #Gouvernement
+ensure esx_ammunationjob #Jobs Armurier
+ensure esx_illegal #Jobs Armes Illégal
+
+#-----Jobs Farms-----#
+ensure esx_jobs #Job Pôle Emploi
+ensure esx_tabacjob #Job Tabagiste 
+ensure esx_ambulancejob #Job Ambulancier + Farm Métier
+ensure esx_mecanojob #Job Mécano
+ensure esx_vigneronjob #Job Vignerons
+ensure esx_taxijob
+ensure esx_pompistejob #Job Pompiste
+ensure esx_drugs #LA DROGUE !
+ensure MF_DrugSales #Vente de drogue Coordonnée Dealer -1152.0,-1447.54,4.71, 36.74
+ensure DopePlant #Pousse de Drogue
+
+#-----Gang Job2-----#
+#ensure esx_famillies #Famillies VERT
+#ensure esx_kano #Clan Kano
+#ensure esx_ballas #Gang Ballas
+#ensure esx_ms13 #Gang MS13
+#ensure esx_mercenaire
+#ensure esx_podolskaia
+#ensure esx_syndicat
+#ensure esx_vagos
+
+#----BRAQUAGE PACIFIC STANDARD----#
+ensure MF_LockPicking
+ensure MF_SafeCracker
+ensure mhacking
+
+ensure MF_Fleeca #Braquage Petite Banque
+ensure loffe_heist #Braquage Pacific Standard
+ensure loffe_robbery #Braquage Superette
+
+#-----Voiture-----#
+ensure esx_carshowroom #Showroom Véhicule
+ensure esx_eden_garage #Garage Voiture
+ensure esx_trunk #Inventaire Véhicule
+ensure esx_location #Location de véhicule au spawn du serveur
+ensure esx_RealisticVehicleFailure #Problème moteur et autre après accident
+ensure esx_legacyfuel
+ensure esx-kr-vehicle-push
+ensure InteractSoundS
+ensure seatbelt
+ensure speedometer #Compteur de vitesse + Essence
+ensure RealisticAirControl
+ensure esx_vehiclelock #Clé voiture
+ensure Car_Doors
+ensure lux_vehcontrol #Controle des sirènes des voitures
+ensure ESX_GiveCarKeys-1.1 #échange voiture entre particulié
+
+#-----Mapping-----#
+ensure lspdloader
+ensure prison-map-addon #Prison
+ensure SLBK11_MissionRow #LSPD
+ensure nw_bahamaMama #Porte Bahama
+ensure coloredhud #HUD Coloré Blips Armes Radio
+ensure nw_mine
+ensure mapbuilder
+ensure streammap
+ensure Arkadia_unicorn #Unicorn
+ensure mappings
+ensure Arkadia_medical #Hopital
+ensure lsms #Hopital
+ensure modular_carlift #Mécano ouverture garage + ajout de la passerelle
+
+#-----Personnage-----#
+ensure new_banking #Interface ATM
+ensure jsfour-idcard #Carte d'Identité
+ensure police_radio #Animation Armes Police + Animation civil
+ensure gang_action #Animation Armes Gang
+ensure esx-checkdeathcause #Identifié la mort
+ensure DamageWalkMode #Boitte a partir de 60HP
+ensure esx_customui #HUD Faim/Soif/Bourré + Gestion Voix
+ensure CarryPeople #Menu Interaction Rapide Option Porter ou "PiggyBack"
+ensure Radiant_Animations #Animation Menu Interaction Rapide
+ensure radialmenu #Menu Interaction Rapide
+
+#-----Administration-----#
+ensure esx_announce #Annonce Admin
+ensure esx_spectate #Spectate + Voir inventaire
+ensure FiveM-BanSql-1.0.8 #Système de Bannissement
+
+ensure ServerPassword #Mot de passe connexion au serveur
+
+#-----Voitures Addons----#   
+ensure Captain14_FBI
+#ensure LSPD
+ensure taxi #Taxi + Modif vitesse voiture police
+ensure DodgeEMS
+ensure ammunationVehicles
+
+#-----Discord----#
+
+ensure esx_discord_bot
+ensure DiscordBot
+ensure DiscordRichPresence #Image Discord
+
+sv_scriptHookAllowed 0
+
+# change this
+#rcon_password 10572JHG1ehF
+
+sv_hostname "^4[^0FR/QC^1] ^0❮ ☄️ ^3Arkadia ☄️ ^0❯ ^9| 🌐 ^6FREE-ACCESS 🌐 ^9| 💵 ^320K DÉPART 💵 ^9| 📲 ^2CARTE SIM 📲 ^9| 📦 ^4DOUBLE JOBS 📦 ^9| 🔊 ^8DISCORD: NWQ5G5U ^9|"
+
+# nested configs!
+#exec server_internal.cfg
+
+# loading a server icon (96x96 PNG file) - MicroSerum's logo by default
+load_server_icon logo.png
+
+# convars for use from script
+#set temp_convar "hey world!"
+
+# disable announcing? clear out the master by uncommenting this
+#sv_master1 ""
+
+# want to only allow players authenticated with a third-party provider like Steam?
+#sv_authMaxVariance 1
+#sv_authMinTrust 5
+
+# add system admins
+add_ace group.admin command allow # allow all commands
+add_ace group.admin command.quit deny # but don't allow quit
+add_ace group.admin command.eup
+add_principal identifier.steam:11000010dbee8b6 group.admin # add the admin to the group
+
+
+
+add_ace resource.essentialmode command.add_principal allow
+add_ace resource.suptime command.sets allow
+add_ace resource.uptime command.sets allow
+
+
+
+add_ace resource.reboot command.restart allow
+add_ace resource.reboot command.start allow
+add_ace resource.reboot command.stop allow
+
+
+
+# add system admins
+add_ace group.admin fax allow               # allow all commands for FAXES Script admins 
+add_ace group.moderator fax allow           # allow all commands for FAXES Script moderators
+add_ace group.moderator fax.cmds deny	    # disallow FAXES Script Perms for moderators
+add_ace Fax.Admin fax.admin allow
+
+add_ace resource.esx_anticheat command.sets allow
+
+add_principal identifier.steam:11000010dbee8b6 Fax.Admin #ikNox
+
+add_principal identifier.steam:11000010dbee8b6 group.admin #ikNox
+
+
+# remove the # to hide player endpoints in external log output
+sv_endpointprivacy true
+
+restart sessionmanager
+
+
+
+
+#################################
+### Copyright by VixZy ###
+#################################
+
+sets Base Developped by "💻 Rage.in_me/VixZy 💻"
